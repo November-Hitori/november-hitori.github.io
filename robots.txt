@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://november-hitori.github.io/sitemap.xml
