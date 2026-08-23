@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="/styles/main.min.css">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+
+
+<style>:root { --heatmap-color: #39d353; }</style>
+
+
+
+<style>
+  .theme-toggle-sun  { display: flex; }
+  .theme-toggle-moon { display: none; }
+  :root.theme-light .theme-toggle-sun  { display: none; }
+  :root.theme-light .theme-toggle-moon { display: flex; }
+</style>
+
+
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('flavor-theme');
+      var theme = saved || 'dark';
+      if (theme === 'light') {
+        document.documentElement.classList.add('theme-light');
+      }
+    } catch (e) { }
+  })();
+</script>
+  <meta name="generator" content="Gridea Pro 1.2.2">
+  <title>CCBC 17 Write Up | November 的小站</title>
+  
+<meta property="og:title" content="CCBC 17 Write Up" />
+<meta property="og:type" content="article" />
+
+
+<meta name="description" content="CCBC 17 Write Up 队名：神鲸成了佛，便成了佛鲸 成员：211 November 某COPY的ncf sunflower VDSX 自我介绍 211:我是队长。 November：我是忍厨时一月，出于一些事务，我去了一趟广东，所以前三天几乎没有全力参加，都只是起到辅助作用（在回家后倒是全力参赛了。 以及，Shinobu 可爱。 &amp;hellip;">
+<link rel="canonical" href="https://november-hitori.github.io/post/ccbc-17-write-up/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"CCBC 17 Write Up","url":"https://november-hitori.github.io/post/ccbc-17-write-up/","description":"CCBC 17 Write Up 队名：神鲸成了佛，便成了佛鲸 成员：211 November 某COPY的ncf sunflower VDSX 自我介绍 211:我是队长。 November：我是忍厨时一月，出于一些事务，我去了一趟广东，所以前三天几乎没有全力参加，都只是起到辅助作用（在回家后倒是全力参赛了。 以及，Shinobu 可爱。 \u0026hellip;","datePublished":"2026-08-24T03:11:12+08:00","dateModified":"2026-08-23T20:48:53+08:00","author":{"@type":"Person","name":"November 的小站"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/images/avatar.png"},"name":"November 的小站"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://november-hitori.github.io","name":"November 的小站","position":1},{"@type":"ListItem","item":"https://november-hitori.github.io/post/ccbc-17-write-up/","name":"CCBC 17 Write Up","position":2}]}</script>
+<meta property="og:title" content="CCBC 17 Write Up">
+<meta property="og:description" content="CCBC 17 Write Up 队名：神鲸成了佛，便成了佛鲸 成员：211 November 某COPY的ncf sunflower VDSX 自我介绍 211:我是队长。 November：我是忍厨时一月，出于一些事务，我去了一趟广东，所以前三天几乎没有全力参加，都只是起到辅助作用（在回家后倒是全力参赛了。 以及，Shinobu 可爱。 &amp;hellip;">
+<meta property="og:url" content="https://november-hitori.github.io/post/ccbc-17-write-up/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="November 的小站">
+<meta property="og:image" content="/images/avatar.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://november-hitori.github.io/post/ccbc-17-write-up/">
+<meta name="twitter:title" content="CCBC 17 Write Up">
+<meta name="twitter:description" content="CCBC 17 Write Up 队名：神鲸成了佛，便成了佛鲸 成员：211 November 某COPY的ncf sunflower VDSX 自我介绍 211:我是队长。 November：我是忍厨时一月，出于一些事务，我去了一趟广东，所以前三天几乎没有全力参加，都只是起到辅助作用（在回家后倒是全力参赛了。 以及，Shinobu 可爱。 &amp;hellip;">
+<meta name="twitter:image" content="/images/avatar.png">
+</head>
+<body class="flavor-theme">
+
+  <header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <div class="top-bar">
+
+      
+      <div class="top-bar__left">
+        
+        <a href="https://november-hitori.github.io" class="site-avatar-link" aria-label="返回首页">
+          <img class="site-avatar" src="/images/avatar.png" alt="November 的小站" />
+        </a>
+        
+        <a href="https://november-hitori.github.io" class="site-name-link">November 的小站</a>
+      </div>
+
+      
+      <nav class="top-bar__nav" id="sectionBar">
+        
+        
+        <a class="nav-item" href="/">首页</a>
+        
+        <a class="nav-item" href="/post">博客</a>
+        
+        <a class="nav-item" href="/memos">闪念</a>
+        
+        <a class="nav-item" href="/archives">归档</a>
+        
+        <a class="nav-item" href="/tags">标签</a>
+        
+        <a class="nav-item" href="/links">友链</a>
+        
+        <a class="nav-item" href="/post/about">关于</a>
+        
+        
+      </nav>
+
+      
+      <div class="top-bar__right">
+        <button class="btn-icon btn-search search-btn" id="btnSearch" type="button" aria-label="搜索">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="btn-icon theme-toggle theme-toggle-sun" id="themeToggleSun" type="button"
+          aria-label="切换到浅色模式">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 1C12.5523 1 13 1.44772 13 2V4C13 4.55228 12.5523 5 12 5C11.4477 5 11 4.55228 11 4V2C11 1.44772 11.4477 1 12 1Z"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12ZM12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9Z"></path>
+            <path d="M13 20C13 19.4477 12.5523 19 12 19C11.4477 19 11 19.4477 11 20V22C11 22.5523 11.4477 23 12 23C12.5523 23 13 22.5523 13 22V20Z"></path>
+            <path d="M4.22282 4.22289C4.61335 3.83236 5.24651 3.83236 5.63704 4.22289L7.04704 5.63289C7.43756 6.02341 7.43756 6.65658 7.04704 7.0471C6.65651 7.43762 6.02335 7.43762 5.63283 7.0471L4.22282 5.6371C3.8323 5.24658 3.8323 4.61341 4.22282 4.22289Z"></path>
+            <path d="M18.367 16.9529C17.9765 16.5623 17.3433 16.5623 16.9528 16.9529C16.5623 17.3434 16.5623 17.9766 16.9528 18.3671L18.3628 19.7771C18.7533 20.1676 19.3865 20.1676 19.777 19.7771C20.1675 19.3866 20.1675 18.7534 19.777 18.3629L18.367 16.9529Z"></path>
+            <path d="M1 12C1 11.4477 1.44772 11 2 11H4C4.55228 11 5 11.4477 5 12C5 12.5523 4.55228 13 4 13H2C1.44772 13 1 12.5523 1 12Z"></path>
+            <path d="M20 11C19.4477 11 19 11.4477 19 12C19 12.5523 19.4477 13 20 13H22C22.5523 13 23 12.5523 23 12C23 11.4477 22.5523 11 22 11H20Z"></path>
+            <path d="M7.04704 16.9529C7.43756 17.3434 7.43756 17.9766 7.04704 18.3671L5.63704 19.7771C5.24651 20.1676 4.61335 20.1676 4.22282 19.7771C3.8323 19.3866 3.8323 18.7534 4.22283 18.3629L5.63283 16.9529C6.02335 16.5623 6.65651 16.5623 7.04704 16.9529Z"></path>
+            <path d="M19.777 5.6371C20.1675 5.24657 20.1675 4.61341 19.777 4.22289C19.3865 3.83236 18.7533 3.83236 18.3628 4.22289L16.9528 5.63289C16.5623 6.02341 16.5623 6.65658 16.9528 7.0471C17.3433 7.43762 17.9765 7.43762 18.367 7.0471L19.777 5.6371Z"></path>
+          </svg>
+        </button>
+        <button class="btn-icon theme-toggle theme-toggle-moon" id="themeToggleMoon" type="button"
+          aria-label="切换到深色模式">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C10.0222 2 8.08879 2.58649 6.4443 3.6853C4.79981 4.78412 3.51809 6.3459 2.76121 8.17317C2.00433 10.0004 1.8063 12.0111 2.19215 13.9509C2.578 15.8907 3.53041 17.6725 4.92894 19.0711C6.32746 20.4696 8.10929 21.422 10.0491 21.8079C11.9889 22.1937 13.9996 21.9957 15.8268 21.2388C17.6541 20.4819 19.2159 19.2002 20.3147 17.5557C21.4135 15.9112 22 13.9778 22 12C22 11.5955 21.7564 11.2309 21.3827 11.0761C21.009 10.9213 20.5789 11.0069 20.2929 11.2929C19.287 12.2988 17.9226 12.864 16.5 12.864C15.0774 12.864 13.713 12.2988 12.7071 11.2929C11.7012 10.287 11.136 8.92261 11.136 7.5C11.136 6.07739 11.7012 4.71304 12.7071 3.70711C12.9931 3.42111 13.0787 2.99099 12.9239 2.61732C12.7691 2.24364 12.4045 2 12 2ZM7.55544 5.34824C8.27036 4.87055 9.05353 4.51389 9.87357 4.28778C9.39271 5.27979 9.13604 6.37666 9.13604 7.5C9.13604 9.45304 9.91189 11.3261 11.2929 12.7071C12.6739 14.0881 14.547 14.864 16.5 14.864C17.6233 14.864 18.7202 14.6073 19.7122 14.1264C19.4861 14.9465 19.1295 15.7296 18.6518 16.4446C17.7727 17.7602 16.5233 18.7855 15.0615 19.391C13.5997 19.9965 11.9911 20.155 10.4393 19.8463C8.88743 19.5376 7.46197 18.7757 6.34315 17.6569C5.21447 16.538 4.4624 15.1126 4.15372 13.5607C3.84504 12.0089 4.00347 10.4003 4.60897 8.93853C5.21447 7.47672 6.23985 6.22729 7.55544 5.34824Z"></path>
+            <path d="M19 2C19.5523 2 20 2.44772 20 3V4H21C21.5523 4 22 4.44772 22 5C22 5.55228 21.5523 6 21 6H20V7C20 7.55228 19.5523 8 19 8C18.4477 8 18 7.55228 18 7V6H17C16.4477 6 16 5.55228 16 5C16 4.44772 16.4477 4 17 4H18V3C18 2.44772 18.4477 2 19 2Z"></path>
+          </svg>
+        </button>
+        <button class="btn-icon btn-nav-toggle mobile-only" id="btnNavToggle" type="button" aria-label="切换导航">
+          <div class="hamburger" id="hamburger">
+            <span class="hamburger__line hamburger__line--top"></span>
+            <span class="hamburger__line hamburger__line--bottom"></span>
+          </div>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+
+<div class="header-spacer"></div>
+
+<script>
+(function(){
+  var btn = document.getElementById('btnNavToggle');
+  var nav = document.getElementById('sectionBar');
+  var hamburger = document.getElementById('hamburger');
+  if (btn && nav) {
+    btn.addEventListener('click', function(){
+      nav.classList.toggle('top-bar__nav--open');
+      if (hamburger) hamburger.classList.toggle('is-active');
+    });
+    nav.querySelectorAll('.nav-item').forEach(function(item){
+      item.addEventListener('click', function(){
+        nav.classList.remove('top-bar__nav--open');
+        if (hamburger) hamburger.classList.remove('is-active');
+      });
+    });
+  }
+
+  var root = document.documentElement;
+  var applyTheme = function(theme, persist){
+    if (theme === 'light') {
+      root.classList.add('theme-light');
+    } else {
+      root.classList.remove('theme-light');
+    }
+    if (persist) {
+      try { localStorage.setItem('flavor-theme', theme); } catch (e) {}
+    }
+  };
+  document.querySelectorAll('.theme-toggle').forEach(function(el){
+    el.addEventListener('click', function(){
+      applyTheme(root.classList.contains('theme-light') ? 'dark' : 'light', true);
+    });
+  });
+})();
+</script>
+
+  <main class="site-main" role="main">
+    
+<article class="article-container">
+  <header class="article-header">
+    <h1 class="article-title">CCBC 17 Write Up</h1>
+    <div class="article-meta">
+      
+      
+      <a href="/category/mi-ti/" class="article-meta__category">谜题</a>
+      
+      
+      <span class="article-meta__sep">·</span>
+      
+      <span class="article-meta__item">2026-08-24</span>
+      
+      <span class="article-meta__sep">·</span>
+      <span class="article-meta__item">14 分钟阅读</span>
+      
+    </div>
+    
+    <div class="article-header__tags">
+      
+      <a href="/tag/writeup/" class="tag-pill tag-pill--sm">WriteUp</a>
+      
+    </div>
+    
+  </header>
+
+  
+
+  <div class="article-content">
+    <h1 id="ccbc-17-write-up">CCBC 17 Write Up</h1>
+<p>队名：<strong>神鲸成了佛，便成了佛鲸</strong></p>
+<p>成员：211 November 某COPY的ncf sunflower VDSX</p>
+<h1 id="heading">自我介绍</h1>
+<p>211:我是队长。</p>
+<p>November：我是忍厨时一月，出于一些事务，我去了一趟广东，所以前三天几乎没有全力参加，都只是起到辅助作用（在回家后倒是全力参赛了。</p>
+<p>以及，Shinobu 可爱。</p>
+<p><img src="/post-images/1787489118159455300_0.png" alt="" /></p>
+<p>sunflower：我是拿批。</p>
+<p>某COPY的ncf：我是奶龙。关注COPY谢谢喵。</p>
+<p>*VDSX不说话装高手</p>
+<h1 id="heading-1"><strong>祸乱时柒的爱情</strong></h1>
+<p>211：因为没有新手区，所以这次一上来就是卡题爽。看一百多队过了的题我们还在卡只能急急急😭。本区喜欢的题：欢迎来到互联网、雪为何色、趣味小常识。</p>
+<p>November：应该来说是惯例的传统区域吗。</p>
+<h2 id="heading-2"><strong>欢迎来到互联网</strong></h2>
+<p>211：非常标准的isis好题，从题面、FT、提取都围绕狗这一主题来展开，简单有趣，非常适合作为第一道题。比较差的是野原小白的题面有点难想。<br />
+November：应当说是很正统的题目，狗的暗示虽然我们没看出来但是还是很快猜到了狗，期间我做了几个日谜。</p>
+<p>形容卡居然是方块形状吗……有点不常见的描述</p>
+<p>sunflower：这位用户经常和某个听起来像铃铛的朋友一起出现。</p>
+<p>某COPY的ncf：感觉是一个好的开头x比较中规中矩的同时有一些趣味。</p>
+<h2 id="heading-3"><strong>余烬</strong></h2>
+<p>某COPY的ncf：想到火会烧字的机制之后在排字上面卡了很久……不过最后队友半猜半爆出来了。</p>
+<p>sunflower：因为我们确定不了所有火源，所以直接根据离已知火源曼哈顿距离猜出在原句中大概位置，然后开爆。</p>
+<h2 id="heading-4"><strong>雪为何色</strong></h2>
+<p>211：适合团建的好题，找颜色很欢乐。<br />
+November：很好的用雪碧是绿色的误导了队友……我的锅。不过做 word search 还是不困难的，团建还是很快找完的。</p>
+<p>抢提取没抢过日花/ll</p>
+<p>sunflower：一区综合来看最喜欢的题。</p>
+<p>某COPY的ncf：好像挺早就看到一个信口雌黄的，不过一直感觉要填英文就还是卡了一会在这（）</p>
+<h2 id="heading-5"><strong>保持解谜就无人爆炸</strong></h2>
+<p><em><strong>此题未完成</strong></em><br />
+November：转了语音后感觉比较何意味就丢了，再也没人看了！</p>
+<h2 id="heading-6"><strong>三步必杀</strong></h2>
+<p>211：提取比象棋更先看出来，知道了这题大概怎么做，但我真不会下棋，我还在队群问了三步杀是不是包含对面一步的蠢问题。好在有队友提出了可以王车易位，做出了两个盘面就爆掉了。btw我看见完赛群有人说这题不够精致，我说这样就挺好了，别为难不会下棋的人了。<br />
+某COPY的ncf：不懂下棋，队友全做了。</p>
+<h2 id="heading-7"><strong>幻方的交易策略</strong></h2>
+<p><em><strong>此题根据meta反爆了</strong></em></p>
+<h2 id="heading-8"><strong>盗影团参上！</strong></h2>
+<p>211：讨厌这题，我看了至少三遍黑桃影的《spade》pv以为会有什么关联，结果没有。<br />
+November：做了 nonogram，然后还在想着，啊这个纸笔不困难，怎么这就是最后一个纸笔了/ll。</p>
+<p>感觉上手影的点子是好的，但是藏得有点太深了……</p>
+<p>sunflower：手影的呈现形式很酷，但是ft直接把我带歪到找spade里面的asl手势了</p>
+<p>某COPY的ncf：想到手，但没发现要看手影。</p>
+<h2 id="heading-9"><strong>混元大熔炉</strong></h2>
+<p>211：好题，但是因为仙人所下的棋都以为是烂柯棋导致生怎么也对不上卡了好久。</p>
+<p>November：我认为有几个线索写得很趣味啊！比如三个二阶堂。感觉还是该早点枚举一下 clue 顺序的。</p>
+<p>sunflower：本来是很讨厌cw的，但这道题的交叉验证确实挺显眼的，所以也还能接受。</p>
+<p>某COPY的ncf：很喜欢的一个，虽然想到关键点之后cw只剩苦力了。</p>
+<h2 id="heading-10"><strong>趣味小常识</strong></h2>
+<p>211：很庆幸自己第一次找字典就找到了正确的字典，完赛群看别的队用了别的版本的字典。</p>
+<p>November：顺手做了 link 之后对着 DICT DEFS FOR RED AREA HANZI 发呆，剩下的提取啥的丢给队友了。</p>
+<p>某COPY的ncf：队友看出来象形的字之后应该还是很顺利的。以及这个下午我几乎都不在（）</p>
+<h2 id="strands"><strong>刻在strands里的谜题</strong></h2>
+<p><em><strong>本题未完成</strong></em></p>
+<p>某COPY的ncf：太洋不看。</p>
+<h2 id="heading-11"><strong>万象更新</strong></h2>
+<p>211：点子不错。</p>
+<p>November：不太喜欢直接首字母（但是确实点子不错。想到找战队的转会是我写站内信写了一半想到的。</p>
+<p>sunflower：做完第一层战队之后卡了很久，完全没想到是直接首字母啊！</p>
+<p>某COPY的ncf：没怎么参与，不过描述能更神鲸一点就更好了x</p>
+<p><img src="/post-images/1787489132009877300_0.jpg" alt="" /></p>
+<h2 id="meta">META：<strong>八音盒里的潘多拉</strong></h2>
+<p>211：我在网易云创建了时柒的歌单，你也来看看吧!</p>
+<p><img src="/post-images/1787489137624305900_0.png" alt="" /></p>
+<p>November：大致上负责了找东西以及作为 gop 拿下猜出焚音打。算的上中规中矩的 meta？感谢重音的献唱，我没绷住。</p>
+<p>sunflower：经典术笑话，思路还是比较顺的。</p>
+<p>某COPY的ncf：经典术笑话。以及c17为什么没有中术题（（（</p>
+<p><img src="/post-images/1787489141937771900_0.png" alt="" /></p>
+<p><em>此事在金牌解谜中早有记载</em></p>
+<h1 id="heading-12"><strong>视中监</strong></h1>
+<p>211：坐牢区，牢完了。喜欢的题：碳基生物计算器、亚细亚三重奏、玫瑰花园的小径。</p>
+<p>November：我个人不太喜欢把题面藏到【玩手机】里面的设计。【没题面】的题这样的设计被用了很多次，像是 C16 的造纸和火药，PnKU 三中的岩心新城一期，但是他们可以让我感受到这样做的动机。而【视中监】给我的感受完全是想藏就藏了，我没感受到出题组的目的是什么，为了表达什么，像是一拍脑袋想做就做了。</p>
+<p>如果把谜题真的视为说是一种交流的话，很遗憾我没有读懂出题组想要表达什么。</p>
+<h2 id="heading-13"><strong>把握今朝</strong></h2>
+<p><em><strong>此题根据meta反爆了</strong></em></p>
+<p>某COPY的ncf：找到题面最早的但没做x最后反爆了一下。</p>
+<h2 id="heading-14"><strong>本是同根生</strong></h2>
+<p>211:感觉挺好玩的，但我基本没玩到什么队友就做出来了。</p>
+<p>November：苦力题。基本上是——抄词，观察机制/苦力配对。有些小题被队友爆了之后我（利用 Gemini）瞪了机制（旗语的暗示还是很不错的。包括还有一些异常，还算比较明显。</p>
+<p>sunflower：无情的枚举机器。偷了旗语二轮提取。</p>
+<p>某COPY的ncf：做法是先苦力列表再找机制。在二区还是很顺利的一道题。</p>
+<h2 id="heading-15"><strong>创造你的历史</strong></h2>
+<p><em><strong>此题根据meta反爆了</strong></em></p>
+<p>November：我曾经无数次想做这个题，每次都被家丁——宅男劝退了。</p>
+<p>某COPY的ncf：看不懂家丁那一步就没做这个，看了解析只能说还好没做（）</p>
+<h2 id="heading-16"><strong>广播体操二十六式</strong></h2>
+<p>211：很神人的一道题，什么叫凌晨三点为了做题我开始翩翩起舞。btw一开始只有跳舞的蟹那部分题面的时候我以为19个贴纸刚好对应19个福尔摩斯跳舞小人，跟着跳舞小人的姿势跳了好久。</p>
+<p>November：</p>
+<p><img src="/post-images/1787489210438333700_0.png" alt="" /></p>
+<p>sunflower：谁懂最后把要提取的四个动作连着跳了一遍还没乱摇分数高。</p>
+<p>某COPY的ncf：发现每个招式都有一个召唤的动作之后事情好端端地坏了起来。还好211一直在苦力叠图给过了。</p>
+<p><img src="/post-images/1787489213202368900_0.png" alt="" /></p>
+<h2 id="heading-17"><strong>玫瑰花园的小径</strong></h2>
+<p>211：绝世好题，但是我们在最后提取选错词了比较气笑。</p>
+<p>sunflower：同之前，因为这道交叉验证也很多所以成了我比较喜欢的cw。不过最后找到三句花园小径句后匹配单词反而卡很久。</p>
+<p>某COPY的ncf：经典卡提取。</p>
+<h2 id="heading-18"><strong>情迷翡冷翠</strong></h2>
+<p>211：不会</p>
+<p>November：成功用中英文互译坑了队友。感觉我完全看不出这个题的引导，只能对着这些东西乱猜哈哈。</p>
+<p>sunflower：本来以为直接找谐音就行，完全没想到要ANA，看来还是不够神鲸。</p>
+<p>某COPY的ncf：二区最不喜欢的一个。呈现挺神鲸的但完全想不到。提示一次买够才过了。</p>
+<h2 id="heading-19"><strong>碳基生物计算</strong></h2>
+<p>211：好题，不过纽约食物用的美制品脱转盎司是直接除以16，但是直接除以题目给的单价的话就会因为精度不够提取错误，这我觉得不好。</p>
+<p>sunflower：没怎么卡就知道要做什么，但是最后海里的转换有点神必了。</p>
+<p>某COPY的ncf：其实也卡了很久提取（）一个是没太关注到要会员，另一个最后做乘法有点诡异。</p>
+<h2 id="heading-20"><strong>新式疗法</strong></h2>
+<p>November：我觉得 Gemini 很厉害啊。Gemini 穿了主题之后被提取硬控了，很坏啊。Mirror Sound Bell 得到镜音铃实在是，令人难绷。</p>
+<p>sunflower：很像洋题，以及瞪出了最后镜音铃的提取。</p>
+<h2 id="heading-21"><strong>亚细亚三重奏</strong></h2>
+<p>211：一般好题，一个人太难瞪了。</p>
+<h2 id="heading-22"><strong>周游列国</strong></h2>
+<p><em><strong>此题未完成</strong></em></p>
+<h2 id="meta-1">META：<strong>去伪存真的李昌钰</strong></h2>
+<p>211：最牢的一题，把提示买完了才做出来。不过买之前就隐约觉得铅笔和氧化铅应该有点关系，要是能想出来提取就好了。</p>
+<p>November：一次买够了。必须承认我完全不能理解这个题的暗示。虽然这个点我在高铁上没法流畅做题（转化倒是我想到的，然后就是队友进行了两个精彩的反爆（）</p>
+<p>sunflower：最开始因为提示中的“图画”完全跑偏，最喜欢的还是熊猫-猫熊的神鲸（虽然逻辑上怪怪的</p>
+<p>某COPY的ncf：其实挺喜欢这个meta的，但由于种种原因做的不太顺利，买买买。</p>
+<p><img src="/post-images/1787489148687228300_0.jpg" alt="" /></p>
+<h1 id="heading-23"><strong>艺人之夏</strong></h1>
+<p>211：本次hunt最喜欢的区域，过题爽。</p>
+<p>November：我还挺喜欢这个日谜区，基本上是【玩手机】【做小题】【解答题】齐头并进了。我主要做了小题和玩了一半手机。</p>
+<p>队内小题一直都做得很流畅，基本上没怎么卡顿，卡顿也是玩手机玩的。</p>
+<p>sunflower：熬过二区之后的放松站，日谜和小META在相互验证下做的都还比较顺。手机没怎么玩，不过想问一句给不那么熟的群友开朋友的地址真的合理吗×</p>
+<p>某COPY的ncf：应该说是整体最喜欢的一个区，而且过的很快。但我做小题和玩手机比较多x</p>
+<h2 id="meta-2">META：<strong>追逐时间的画中仙</strong></h2>
+<p>November：算得上是，我对上了前面一半脑电波的题。由于好像从哪里听说了太吾绘卷于是很快就找到了数据库，总体而言第一步很快做完了，第二步队友发现之后被我抢了一手提交（</p>
+<p>sunflower：非常顺的META，看wiki看的有点想玩了。</p>
+<p>某COPY的ncf：过的很快，主要是神奇队友一下就想到了那个武侠游戏数据库。</p>
+<p>211：队友做完了我做什么。</p>
+<h1 id="heading-24"><strong>不理性经纪人假设</strong></h1>
+<p>211：最牢的一区，也是最疯狂的一区，类比C15的“孬题杀死了出题明星”这区。喜欢的题：直到大地变成一块拼图。</p>
+<p>November：应该来说是再一次出现的惯例的传统区域吗。</p>
+<h2 id="heading-25"><strong>失忆症候群</strong></h2>
+<p>November：我很不喜欢这个题。我认为逻辑依赖 nutrimatic 的所有题都最好需要中间答案验证。</p>
+<p>另外罐头提示最早连每个小题做法都不打算提供，感觉有点高估了做题人的人均通灵能力了——我认为对着一串字符转化为数字这种形式能第一感是 A1Z26 的人很少吧。</p>
+<p>以及我个人不喜欢逻辑依赖 nutrimatic 的题。【这是纯粹的个人喜好】</p>
+<p>sunflower：最开始瑞典直接联想斯德哥尔摩，还以为答案都和症候群有关，结果并不是。严肃谴责venus那道左没对齐右没留空导致不知字母数。</p>
+<p>某COPY的ncf：被神秘a1z26气笑。</p>
+<h2 id="heading-26"><strong>五雷灌顶</strong></h2>
+<p>211：chatGPT长考24分钟唯一解了第三关。GPT牛逼！</p>
+<p><img src="/post-images/1787489152300833200_0.png" alt="" /></p>
+<p>sunflower：知道是逻辑电路之后就迎刃而解了，比较酷的想法。</p>
+<h2 id="heading-27"><strong>直到大地变成一块拼图</strong></h2>
+<p>211：611跑了一个点，我负责拿拼图和拼拼图。这绝对是这次hunt最疯狂的一题，提取不评价，想法本身就很牛逼了。</p>
+<p>November：大家好我挂机不动拿重复拼图被 211 diss 了。</p>
+<p>某COPY的ncf：负责出门踩点（）以及到了地方发现没有ccbc相关物品，打算借路人小哥的手机拍ccbc的网页来着，被当成诈骗了orz</p>
+<h2 id="heading-28"><strong>疯狂的猜图</strong></h2>
+<p><em><strong>此题未完成</strong></em></p>
+<h2 id="heading-29"><strong>😊😠😢😃🏢</strong></h2>
+<p>211：典型的好题烂提取。</p>
+<p>November：在队友发现红色三角小女孩红色三角是 teto 之后负责翻出来了玛莎拉蒂的几首歌和瞪歌词。但是很遗憾，我还是不够抽象瞪不出来这些简笔画。</p>
+<p>抢了诡异的提取，感觉上紫色四叶草对应紫花苜蓿带点诡异的，毕竟紫花苜蓿怎么看都是花是紫的叶子不是紫的。。</p>
+<p>sunflower：依旧卡提取，这次日术含量有点多啊（</p>
+<p>某COPY的ncf：看出来是术曲重音teto主题之后交给日术皮队友了，依旧卡最后一步。以及为什么c17没有中术题（（（</p>
+<h2 id="heading-30"><strong>拼多多</strong></h2>
+<p>211：依旧是我拼图，因为没注意到“反馈（4）”我拼了两遍才提交fire。</p>
+<p>November：负责在 211 拼出火之后在 3/20 提交次数的情况下交了大家想爆的 fox。</p>
+<p>sunflower：有的人一来就狙了狐狸但忘了交英文</p>
+<h2 id="heading-31"><strong>危机合约「破玄作战」</strong></h2>
+<p>sunflower：vd单刷完了小题，我只负责了提取环节，一开始想着主线不止八章直接跑偏搜全息矩阵了</p>
+<h2 id="heading-32"><strong>传说的一夜</strong></h2>
+<p>November：居然不用计算南入/ll，队友做完后不会提取，最后居然 A1Z26 吗呃呃。。真神秘。</p>
+<p>某COPY的ncf：不懂麻将，但在队友卡提取的时候过掉了。队友还是太谨慎了这都没交过.jpg</p>
+<h2 id="heading-33"><strong>精删打字通</strong></h2>
+<p><em><strong>此题未完成</strong></em></p>
+<p>211：一开始不知道规则就把输入和输出记在表格里，猜测每个按键是什么意思，于是我就这样玩了一下午的黑箱版无尽合成。</p>
+<p>某COPY的ncf：看到速记：！？gregg？！</p>
+<h2 id="heading-34"><strong>和而不同</strong></h2>
+<p><em><strong>此题未完成</strong></em></p>
+<h2 id="heading-35"><strong>套四宝</strong></h2>
+<p>November：Gemini 全面胜利！Gemini 单独看出了第一部分的藏单词，并且对第二步找量词也在我的提示下想了出来，剩下就是人工队修修补补的事情。</p>
+<p>水池里面银龙鱼实在难绷。</p>
+<p>某COPY的ncf：几乎是ai单刷了（）</p>
+<h2 id="meta-3"><strong>META：引领潮流的考威尔</strong></h2>
+<p>211：好meta。</p>
+<p>November：最早交 Alfalfa 的时候我就在好奇里面为什么有个 Alfa，于是很快就猜出序列的变化规律，剩下的就是团建解决了。</p>
+<p>sunflower：比较顺的META，也没太多好评价的</p>
+<p>某COPY的ncf：也是挺喜欢的一个meta，挺有趣的。</p>
+<h1 id="--"><strong>互联网过载 &amp; 玩手机</strong></h1>
+<p>本段包含了对于网页解谜（玩手机）的总结，玩手机的每一步将会按照邮件标题给出。</p>
+<p>211：因为一开始就一直在做题没玩手机，到后面我已经完全看不懂了，索性全交给队友了，我没参与网页解谜无关解题的任何部分。</p>
+<p>November：首先我很不喜欢【玩手机】这一步背后的解谜形式。但是实际上【玩手机】仍然有我喜欢的一部分设计。</p>
+<p>出题组可能想做一个基于剧情的 hunt，很遗憾我不喜欢这样的形式。而且这样做也带来了我认为的一些很大的缺点。</p>
+<p>sunflower：其实我还挺喜欢玩手机这个形式的，不过确实很容易陷入“我该找什么”“我以为我按照笔记本提示找完了结果实际上并没有”之类的神奇卡关点。同时，这个形式特别需要每个人都持续跟上进度，不然很容易出现重走队友来时路的情况。不过总的来说，是一次新奇的体验。</p>
+<p>某COPY的ncf：c17是一个百盒剧情hunt。</p>
+<h2 id="heading-36"><strong>入职声明</strong></h2>
+<h2 id="-part1"><strong>找到时柒的真名 Part.1</strong></h2>
+<h2 id="-part2"><strong>找到时柒的真名 Part.2</strong></h2>
+<p>某COPY的ncf：这一块好像都挺顺利的吧，印象不太深。</p>
+<h2 id="heading-37"><strong>找到徐霓的地址</strong></h2>
+<p>某COPY的ncf：在这部分第一次卡了（）没想到切片man要去油管搜这一块，唉唉不是管人痴。</p>
+<p>sunflower：看到密码菌在x的帖子后就试着搜了感谢的所有用户，结果没想到换平台了。</p>
+<h2 id="heading-38"><strong>调查一下无敌承太郎</strong></h2>
+<p>November：大概在找城市的时候接了手，搜出了天好，剩下就是一本道。</p>
+<p>sunflower：已严肃修改用户名和密码。</p>
+<h2 id="heading-39"><strong>试着和洛深建立联系</strong></h2>
+<p>November：这应该而言算是一个槽点很大的区域，当然爱因斯坦谜题推每个人干了什么还是比较有趣的。但是这里的剧情实在是很牵强很诡异，给人一种怪怪的感觉。</p>
+<p>某COPY的ncf：抛开剧情来看我个人感觉还是有意思的。但有给陌生人地址的亲友也太哈人了（）</p>
+<h2 id="heading-40"><strong>调查黄紫捷骗了谁的投资</strong></h2>
+<p>November：基本上是直线的调查 Part，并不会有很大的问题。但是在一个长列表里面藏东西还是有点难受。</p>
+<h2 id="-part2-1"><strong>调查黄紫捷 Part.2</strong></h2>
+<p>November：重磅戏之二之算钱。感觉我完全算不明白啊，虽然我自己弱智把电脑算成音频设备了，但是为什么行政与合规不要钱，我们找这个找了巨久最后问了站内信才知道的哈哈。</p>
+<p>某COPY的ncf：老大我们这样算成本这个公司真的不会违法吗。</p>
+<h2 id="final-puzzle"><strong>Final Puzzle：沉向网中的追迹者</strong></h2>
+<p>211：被舞萌吃气哭，被英皇娱乐气笑，最终的cctv谜题也略显简陋了。</p>
+<p>November：我认为是 C17 的败笔之一。或者说我应该是极度不喜欢这个题的设计的。</p>
+<p>首先需要说明，我对于一个 Hunt 的结尾总是希望它是一个比较精彩的收尾，这一点有很多 hunt 都做出了解答。</p>
+<p>但是 C17 的结尾是一个，诡异的剧情，加上五个，超级无聊的题目，尤其是这些题目出现的位置，我完全不能理解它们处于什么动机被出出来（看提示是想利用到前面的 meta 答案，但实话实说我认为做题人很难体会到这一点），甚至于几个题在剧情上都出现的十分突兀。甚至核心 idea 的破墙效果也并不能掩盖这两个问题。</p>
+<p>虎头蛇尾。甚至前面的头也不能说算得上是好头。</p>
+<p>sunflower：不太喜欢英皇娱乐数据库，主要现实真有个这公司，导致我们直奔前女老板发过的赛马了（。做CCTV这题时已经睡了，不过醒来看到结果还是有种“就这样完赛了？”的落差感，本来以为会是个和剧情结局一样更爆的FM。</p>
+<p>某COPY的ncf：不喜欢，气晕了，一觉醒来队友完赛了。</p>
+<h1 id="heading-41">总体评价</h1>
+<p>211：最终谜题整段垮掉，但我还是享受做好题的时光的。</p>
+<p>November：可以看出出题人在文案上用了很多心思，但可能这些剧情我还是不能理解。啊对这是总体评价。</p>
+<p>sunflower：这是我打的第二个CCBC，所以一直怀着和去年C16一样高的期望值。可以感受到出题人形式上确实花了很多心力，也有一些很酷的点子，不过一些落实的细节（指提示和ft）确实不太令人满意。毕竟是限定工期做出来的，有这些问题似乎也可以理解吧。</p>
+<p>某COPY的ncf：如果终区变成一个很好的fm就好了……不是不能接受没有fm，但前面一直卡卡卡做到最后看到这样的题确实是憋得慌。整体剧情不是很有逻辑的样子（）</p>
+<h2 id="heading-42"><strong>喜欢的部分</strong></h2>
+<p>211：三区、直到大地变成一块拼图。</p>
+<p>November：正如小孩子喜欢吃零食，我喜欢艺人之夏这个区。</p>
+<p>sunflower：玩手机、三区。</p>
+<p>某COPY的ncf：大部分区的meta，三区。</p>
+<h2 id="heading-43"><strong>不喜欢的部分</strong></h2>
+<p>211：最终谜题，以及很多谜题的神金提取，比如**😊😠😢😃🏢**的神秘emoji提取。</p>
+<p>November：正如小孩子不喜欢吃正餐，我认为终章应该被丢掉。</p>
+<p>sunflower：四区的一些题目，终区也没达到预想的高度吧。</p>
+<p>某COPY的ncf：二区和四区的某些题（或许和做的时候的提示比较滚木有关），终区。</p>
+
+  </div>
+
+  
+  <nav class="post-nav">
+    
+    <div class="post-nav-card post-nav-card--empty">
+      <div class="post-nav-card__body">
+        <span class="post-nav-card__label meta-text">上一篇</span>
+        <span class="post-nav-card__empty-text">没有上一篇了~</span>
+      </div>
+    </div>
+    
+    
+    <a href="/post/PKU-Files/" class="post-nav-card post-nav-card--next">
+      <div class="post-nav-card__body">
+        <span class="post-nav-card__label meta-text">下一篇</span>
+        <span class="post-nav-card__title">PKU 我上过的课程文件留档及评价</span>
+      </div>
+      
+      <span class="post-nav-card__arrow">&rarr;</span>
+    </a>
+    
+  </nav>
+
+  
+  
+
+
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+
+    
+    
+    <nav class="footer-nav" aria-label="页脚导航">
+      
+      <a class="footer-nav__link" href="/">首页</a>
+      
+      <a class="footer-nav__link" href="/post">博客</a>
+      
+      <a class="footer-nav__link" href="/memos">闪念</a>
+      
+      <a class="footer-nav__link" href="/archives">归档</a>
+      
+      <a class="footer-nav__link" href="/tags">标签</a>
+      
+      <a class="footer-nav__link" href="/links">友链</a>
+      
+      <a class="footer-nav__link" href="/post/about">关于</a>
+      
+    </nav>
+    
+
+    
+    <div class="footer-social">
+      
+      
+      
+      <a class="footer-social__link" href="/feed.xml" aria-label="RSS">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6.18 15.64a2.18 2.18 0 110 4.36 2.18 2.18 0 010-4.36zM4 4.44A15.56 15.56 0 0119.56 20h-2.83A12.73 12.73 0 004 7.27V4.44zm0 5.66a9.9 9.9 0 019.9 9.9h-2.83A7.07 7.07 0 004 12.93V10.1z"/>
+        </svg>
+      </a>
+    </div>
+
+    
+    <div class="footer-copyright">
+      <p>&copy; 2026 November 的小站. All rights reserved.</p>
+    </div>
+
+    
+    
+
+    
+    <div class="footer-powered">
+      <span>Powered by <a href="https://gridea.pro" target="_blank" rel="noopener noreferrer">Gridea Pro</a></span>
+    </div>
+
+  </div>
+</footer>
+
+  
+  <div class="search-overlay" id="searchOverlay" style="display:none;">
+  <div class="search-modal">
+    <div class="search-header">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" class="search-input" id="searchInput" placeholder="搜索文章..." autocomplete="off" />
+      <span class="search-kbd">&#8984;K</span>
+      <button class="search-close" id="searchClose" type="button" aria-label="关闭搜索">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<script src="/scripts/search.js"></script>
+  
+
+  
+
+  
+
+  
+
+<script>console.log("\n%c ✦ Gridea Pro v1.2.2 %c · Theme: flavor-theme v1.0.0 · https://gridea.pro %c\n","color:#fadfa3;background:#111111;padding:9px 14px;border-radius:4px 0 0 4px;font-weight:500;font-size:12px","color:#e05c00;background:#fff3ec;padding:9px 14px;border-radius:0 4px 4px 0;font-size:11px","")</script>
+</body>
+</html>
